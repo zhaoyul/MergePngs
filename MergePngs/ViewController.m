@@ -9,14 +9,23 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
+
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+
+#define IMG_WIDTH SCREEN_WIDTH * 1.3
+
 
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.imageView.frame = CGRectMake(0, 0, IMG_WIDTH, IMG_WIDTH);
+    self.imageView.center = CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2);
+ 
 }
 
 - (void)didReceiveMemoryWarning {
